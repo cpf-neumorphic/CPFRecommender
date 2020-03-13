@@ -1,8 +1,3 @@
-# The script MUST contain a function named azureml_main
-# which is the entry point for this module.
-
-
-# imports up here can be used to
 import datetime
 import string
 import random
