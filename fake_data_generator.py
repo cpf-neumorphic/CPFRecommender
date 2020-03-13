@@ -45,6 +45,17 @@ def get_random_job_gender_income():
     return job, gender, income
 
 
+def get_age_from_NRIC(NRIC: str):
+    current_year = 2020
+
+    first_two_digit_string = NRIC[1:3]
+    year_born_string = "19" + first_two_digit_string
+
+    age = current_year - int(year_born_string)
+
+    return age
+
+
 # The entry point function
 def azureml_main():
     # Execution logic goes here
