@@ -4,6 +4,8 @@ import random
 import pandas as pd
 from pprint import pprint
 
+from job_industries import job_industries
+
 # Configurations
 total_NRIC_for_group = 1000
 
@@ -34,6 +36,13 @@ def get_fake_NRIC(numbers_of_NRIC: int, from_year_born: int, to_year_born: int):
         "".join(["S", nric, random.choice(string.ascii_uppercase)])
         for nric in nric_array
     ]
+
+
+def get_random_job_gender_income():
+    job, income_by_gender = random.choice(list(job_industries.items()))
+    gender, income = random.choice(list(income_by_gender.items()))
+
+    return job, gender, income
 
 
 # The entry point function
