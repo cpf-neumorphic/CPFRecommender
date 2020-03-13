@@ -57,10 +57,12 @@ def azureml_main():
     # Elder NRICs
     elder_nric_list = get_fake_NRIC(total_NRIC_for_group, 1940, 1965)
 
-    # Initialize the DataFrame to return
+    # Initialize the DataFrames to return
     df = pd.DataFrame(columns=["NRIC", "page_id", "time_spent"])
 
-    user_features = pd.DataFrame(columns=["NRIC", "age", "gender", "job_industry", "income"])
+    user_features = pd.DataFrame(
+        columns=["NRIC", "age", "gender", "job_industry", "income"]
+    )
 
     # Generate each row of data for item in young_nric_list
     for each_nric in young_nric_list:
@@ -117,5 +119,4 @@ if __name__ == "__main__":
 
     # data.csv contains NRIC, page_id, time_spent
     # df.to_csv("data.csv", index=False)
-
 
