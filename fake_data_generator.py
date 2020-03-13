@@ -59,7 +59,7 @@ def azureml_main():
                 [
                     {
                         "NRIC": each_nric,
-                        "page_id": random.randint(0, 9),
+                        "page_id": random.randint(0, 8),
                         "time_spent": random.randint(1, 20),
                     }
                 ]
@@ -73,7 +73,7 @@ def azureml_main():
                 [
                     {
                         "NRIC": each_nric,
-                        "page_id": random.randint(0, 9),
+                        "page_id": random.randint(0, 8),
                         "time_spent": random.randint(1, 20),
                     }
                 ]
@@ -87,7 +87,7 @@ def azureml_main():
                 [
                     {
                         "NRIC": each_nric,
-                        "page_id": random.randint(0, 9),
+                        "page_id": random.randint(0, 8),
                         "time_spent": random.randint(1, 20),
                     }
                 ]
