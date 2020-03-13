@@ -1,0 +1,38 @@
+500 for each class
+
+	Elders ( 1940 >= x <= 1965 ) [ 65 to 80 years old ]
+	Middle ( 1975 >= x <= 1964 ) [ 45 to 64 years old ]
+	Young  ( 2002 >= x <= 1976 ) [ 18 to 44 years old ]
+
+Assume 10 pages
+	
+	Identified by page_id
+
+Time spent on each page 
+	
+	Between 1 to 20 seconds
+
+
+Example Data
+
+	NRIC,		page_id,	time_spent
+	S9474355I,	3,		5
+	S9474355I,	4,		15
+	S9474355I,	8,		9
+
+for each NRIC,
+	at least 5 entries,
+	random page_id per entry
+	random time_spent per entry
+
+age, income, gender, race, job_industry, education_level
+
+0 - Ordinary Account (OA)
+1 - Special Account (SA)
+2 - Medisave Account (MA)
+3 - Apply/change GIRO for Repayment of Education Loan
+4 - Defer repayment
+5 - Change monthly instalment
+6 - CPFIS Self-Awareness Questionnaire (SAQ) Status
+7 - Apply to Withdraw
+8 - Apply to Transfer
