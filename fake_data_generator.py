@@ -104,4 +104,6 @@ def azureml_main():
 
 if __name__ == "__main__":
     df = azureml_main()
+
+    # data.csv contains NRIC, page_id, time_spent
     df.to_csv("data.csv", index=False)
