@@ -60,7 +60,9 @@ def azureml_main():
     # Initialize the DataFrame to return
     df = pd.DataFrame(columns=["NRIC", "page_id", "time_spent"])
 
-    # Generate each row for item in young_nric_list
+    user_features = pd.DataFrame(columns=["NRIC", "age", "gender", "job_industry", "income"])
+
+    # Generate each row of data for item in young_nric_list
     for each_nric in young_nric_list:
         for _ in range(random.randint(5, 8)):
             each_nric_row = pd.DataFrame(
@@ -74,7 +76,7 @@ def azureml_main():
             )
             df = df.append(each_nric_row, ignore_index=True)
 
-    # Generate each row for item in middle_nric_list
+    # Generate each row of data for item in middle_nric_list
     for each_nric in middle_nric_list:
         for _ in range(random.randint(5, 8)):
             each_nric_row = pd.DataFrame(
@@ -88,7 +90,7 @@ def azureml_main():
             )
             df = df.append(each_nric_row, ignore_index=True)
 
-    # Generate each row for item in elder_nric_list
+    # Generate each row of data for item in elder_nric_list
     for each_nric in elder_nric_list:
         for _ in range(random.randint(5, 8)):
             each_nric_row = pd.DataFrame(
@@ -114,4 +116,6 @@ if __name__ == "__main__":
     df = azureml_main()
 
     # data.csv contains NRIC, page_id, time_spent
-    df.to_csv("data.csv", index=False)
+    # df.to_csv("data.csv", index=False)
+
+
