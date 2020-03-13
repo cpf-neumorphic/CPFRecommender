@@ -4,6 +4,10 @@ import random
 import pandas as pd
 from pprint import pprint
 
+# Configurations
+total_NRIC_for_group = 1000
+
+
 # Helper functions goes here
 def get_nric_year_representation(year_born: int):
     nric_year = str(year_born)[2:4]
@@ -36,13 +40,13 @@ def get_fake_NRIC(numbers_of_NRIC: int, from_year_born: int, to_year_born: int):
 def azureml_main():
     # Execution logic goes here
     # Young NRICs
-    young_nric_list = get_fake_NRIC(1000, 1976, 1999)
+    young_nric_list = get_fake_NRIC(total_NRIC_for_group, 1976, 1999)
 
     # Middle NRICs
-    middle_nric_list = get_fake_NRIC(1000, 1964, 1975)
+    middle_nric_list = get_fake_NRIC(total_NRIC_for_group, 1964, 1975)
 
     # Elder NRICs
-    elder_nric_list = get_fake_NRIC(1000, 1940, 1965)
+    elder_nric_list = get_fake_NRIC(total_NRIC_for_group, 1940, 1965)
 
     # Initialize the DataFrame to return
     df = pd.DataFrame(columns=["NRIC", "page_id", "time_spent"])
