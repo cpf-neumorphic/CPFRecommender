@@ -77,6 +77,21 @@ def azureml_main():
 
     # Generate each row of data for item in young_nric_list
     for each_nric in young_nric_list:
+        # For user_features
+        job, gender, income = get_random_job_gender_income()
+        feature = pd.DataFrame(
+            [
+                {
+                    "NRIC": each_nric,
+                    "age": get_age_from_NRIC(each_nric),
+                    "gender": gender,
+                    "job_industry": job,
+                    "income": income,
+                }
+            ]
+        )
+        user_features = user_features.append(feature, ignore_index=True)
+
         for _ in range(random.randint(5, 8)):
             each_nric_row = pd.DataFrame(
                 [
@@ -91,6 +106,21 @@ def azureml_main():
 
     # Generate each row of data for item in middle_nric_list
     for each_nric in middle_nric_list:
+        # For user_features
+        job, gender, income = get_random_job_gender_income()
+        feature = pd.DataFrame(
+            [
+                {
+                    "NRIC": each_nric,
+                    "age": get_age_from_NRIC(each_nric),
+                    "gender": gender,
+                    "job_industry": job,
+                    "income": income,
+                }
+            ]
+        )
+        user_features = user_features.append(feature, ignore_index=True)
+
         for _ in range(random.randint(5, 8)):
             each_nric_row = pd.DataFrame(
                 [
@@ -105,6 +135,21 @@ def azureml_main():
 
     # Generate each row of data for item in elder_nric_list
     for each_nric in elder_nric_list:
+        # For user_features
+        job, gender, income = get_random_job_gender_income()
+        feature = pd.DataFrame(
+            [
+                {
+                    "NRIC": each_nric,
+                    "age": get_age_from_NRIC(each_nric),
+                    "gender": gender,
+                    "job_industry": job,
+                    "income": income,
+                }
+            ]
+        )
+        user_features = user_features.append(feature, ignore_index=True)
+
         for _ in range(random.randint(5, 8)):
             each_nric_row = pd.DataFrame(
                 [
@@ -117,16 +162,20 @@ def azureml_main():
             )
             df = df.append(each_nric_row, ignore_index=True)
 
-    # Remove duplicates
+    # Sort and remove duplicates
     df.sort_values("time_spent", inplace=True)
     df.drop_duplicates(subset=["NRIC", "page_id"], keep="last", inplace=True)
 
+    user_features.sort_values("NRIC", inplace=True)
+
     # Return value must be of a sequence of pandas.DataFrame
-    return df
+    return df, user_features
 
 
 if __name__ == "__main__":
-    df = azureml_main()
+    df, user_features = azureml_main()
+
+    user_features.to_csv("user_features.csv", index=False)
 
     # data.csv contains NRIC, page_id, time_spent
     # df.to_csv("data.csv", index=False)

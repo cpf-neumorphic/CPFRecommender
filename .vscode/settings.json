@@ -1,4 +1,4 @@
 {
-    "python.pythonPath": "/Users/okar/.local/share/virtualenvs/recommender-0PbL46vk/bin/python",
+    "python.pythonPath": "/home/okar/.local/share/virtualenvs/recommender-X48blres/bin/python",
     "python.formatting.provider": "black"
 }
