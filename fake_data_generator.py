@@ -7,7 +7,7 @@ from pprint import pprint
 from job_industries import job_industries
 
 # Configurations
-total_NRIC_for_group = 1000
+total_NRIC_for_group = 2000
 
 
 # Helper functions goes here
@@ -175,8 +175,9 @@ def azureml_main():
 if __name__ == "__main__":
     df, user_features = azureml_main()
 
-    user_features.to_csv("user_features.csv", index=False)
-
     # data.csv contains NRIC, page_id, time_spent
-    # df.to_csv("data.csv", index=False)
+    df.to_csv("data.csv", index=False)
+
+    # user_features.csv contains NRIC, age, gender, job_industry, income
+    user_features.to_csv("user_features.csv", index=False)
 
