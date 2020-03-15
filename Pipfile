@@ -11,6 +11,8 @@ rope = "*"
 [packages]
 pandas = "*"
 faker = "*"
+bson = "*"
+pymongo = "*"
 
 [requires]
 python_version = "3.7"
