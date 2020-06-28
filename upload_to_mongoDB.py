@@ -2,7 +2,7 @@ import csv
 from faker import Faker
 from pprint import pprint
 from pymongo import MongoClient
-from credentials import mongoDBUrl
+mongoDBUrl = 'mongodb://neumorphic:zwaTUBfyGHvGoccvMS9iJOSoIImqEjJkQXkm0ILyBnhWMOLehB8ftEkqxGBlaR98g4VS68KUAOjc9j0bNz1H3Q==@neumorphic.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@neumorphic@'
 from time import sleep
 
 faker = Faker()
@@ -59,20 +59,26 @@ with open("user_recommendations.csv") as csv_file:
         ) = row
 
         formatted_data[NRIC]["Recommendation"] = [
-            {"page_id": recommended_page_1, "duration": predicted_time_spent_1,},
-            {"page_id": recommended_page_2, "duration": predicted_time_spent_2,},
-            {"page_id": recommended_page_3, "duration": predicted_time_spent_3,},
+            recommended_page_1, recommended_page_2, recommended_page_3
         ]
 
-client = MongoClient(mongoDBUrl, retrywrites=False)
-db = client["cpf-neumorphic"]
-users = db["users"]
 
-count = 0
+# client = MongoClient(mongoDBUrl, retrywrites=False)
+# db = client["cpf-neumorphic"]
+# users = db["users"]
+# 
+# count = 0
+# 
+# for user in formatted_data:
+#     count += 1
+#     if count % 10 == 0:
+#         sleep(5)
+#     users.insert_one(formatted_data[user])
 
+# Initiate DB Connection
+client = MongoClient(mongoDBUrl)
+db = client['neumorphic']
+users = db.users
 for user in formatted_data:
-    count += 1
-    if count % 10 == 0:
-        sleep(5)
+    pprint(formatted_data[user])
     users.insert_one(formatted_data[user])
-
