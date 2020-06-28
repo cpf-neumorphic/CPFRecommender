@@ -27,12 +27,12 @@ for each NRIC,
 
 age, income, gender, race, job_industry, education_level
 
-0 - Ordinary Account (OA)
-1 - Special Account (SA)
-2 - Medisave Account (MA)
-3 - Apply/change GIRO for Repayment of Education Loan
-4 - Defer repayment
-5 - Change monthly instalment
-6 - CPFIS Self-Awareness Questionnaire (SAQ) Status
-7 - Apply to Withdraw
-8 - Apply to Transfer
+0 - Demo Videos
+1 - GIRO Status
+2 - Transaction History
+3 - Contribution History Statement
+4 - Contact Information
+5 - Top up my Retirement Account
+6 - Repayment of Education Loan
+7 - CPF Appointment Service
+8 - CPF e-Medical Appointment Service
