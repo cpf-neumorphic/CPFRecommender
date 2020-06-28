@@ -2,7 +2,6 @@ import csv
 from faker import Faker
 from pprint import pprint
 from pymongo import MongoClient
-mongoDBUrl = 'mongodb://neumorphic:zwaTUBfyGHvGoccvMS9iJOSoIImqEjJkQXkm0ILyBnhWMOLehB8ftEkqxGBlaR98g4VS68KUAOjc9j0bNz1H3Q==@neumorphic.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@neumorphic@'
 from time import sleep
 
 faker = Faker()
