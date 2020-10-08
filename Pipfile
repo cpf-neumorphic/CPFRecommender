@@ -13,6 +13,7 @@ pandas = "*"
 faker = "*"
 bson = "*"
 pymongo = "*"
+streamlit = "*"
 
 [requires]
 python_version = "3.7"
