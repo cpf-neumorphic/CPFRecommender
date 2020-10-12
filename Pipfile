@@ -14,6 +14,7 @@ faker = "*"
 bson = "*"
 pymongo = "*"
 streamlit = "*"
+plotly = "*"
 
 [requires]
 python_version = "3.7"
