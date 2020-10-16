@@ -24,14 +24,14 @@ barbra_age = st.select_slider("Barbra Martin's age", options=[25, 31, 49, 56, "a
 st.write("Barbra Martin")
 
 col1, col2, col3 = st.beta_columns(3)  # Layout features in 3 columns
-col1.write(f"👱🏻‍♀️: {barbra_age} years old")
-col2.write(f"📥 💵: {barbra_martin_features[barbra_age][0]}")
-col3.write(f"👨‍👩‍👧‍👧: {barbra_martin_features[barbra_age][1]} children")
+col1.write(f"👱🏻‍♀️: *{barbra_age} years old*")
+col2.write(f"💵: *{barbra_martin_features[barbra_age][0]}*")
+col3.write(f"👨‍👩‍👧‍👧: *{barbra_martin_features[barbra_age][1]}*")
 
 # Barbra Martin's recommendations by age
 st.write("")
 st.write("")
-st.write("page recommendations for Barbra Martin")
+st.write("Page recommendations for Barbra Martin")
 
 rec1, rec2, rec3 = barbra_martin_recommendations[barbra_age]
 
