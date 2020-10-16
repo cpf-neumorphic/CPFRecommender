@@ -13,7 +13,6 @@ pandas = "*"
 faker = "*"
 bson = "*"
 pymongo = "*"
-streamlit = "*"
 plotly = "*"
 
 [requires]
