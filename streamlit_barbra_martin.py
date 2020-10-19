@@ -17,6 +17,12 @@ barbra_martin_features = {
     56: ["S$1000", "2"],
 }
 
+# Streamlit webpage configuration
+st.beta_set_page_config(
+    page_title="Recommender Visualization | CPF Hackathon",
+    page_icon=Image.open("img/logo192.png"),
+)
+
 # Streamlit's slider
 barbra_age = st.select_slider("Barbra Martin's age", options=[25, 31, 49, 56, "all"])
 
