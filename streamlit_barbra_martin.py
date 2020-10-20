@@ -27,7 +27,22 @@ st.beta_set_page_config(
 # Streamlit's slider
 barbra_age = st.select_slider("Barbra Martin's age", options=[25, 31, 49, 56, "all"])
 
-try:
+if barbra_age == "all":
+    df = pd.read_csv("./barbra_martin_chart_data.csv")
+    fig = px.scatter(
+        df,
+        x="age",
+        y="page",
+        color="recommendation",
+        title="Barbra Martin's stages of life on CPF Portal",
+    )
+    fig.update_traces(
+        marker=dict(size=12, line=dict(width=2, color="DarkSlateGrey")),
+        selector=dict(mode="markers"),
+    )
+
+    st.plotly_chart(fig)
+else:
     # Barbra Martin's features by age
     st.write("Barbra Martin")
 
@@ -50,12 +65,3 @@ try:
     col2.image(Image.open(f"img/{rec2}.png"), use_column_width=True)
     col3.write("3rd : ")
     col3.image(Image.open(f"img/{rec3}.png"), use_column_width=True)
-except:
-    df = pd.read_csv("./barbra_martin_chart_data.csv")
-    fig = px.scatter(df, x="age", y="page", color="recommendation",
-            title="Barbra Martin's stages of life on CPF Portal")
-    fig.update_traces(marker=dict(size=12,line=dict(width=2, color="DarkSlateGrey")),
-            selector=dict(mode="markers"))
-
-    st.plotly_chart(fig)
-
